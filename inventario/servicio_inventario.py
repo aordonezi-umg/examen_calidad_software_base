@@ -24,6 +24,8 @@ class ServicioInventario:
             raise InventarioError("El precio debe ser un Decimal mayor que 0")
         if isinstance(existencia, bool) or not isinstance(existencia, int) or existencia < 0:
             raise InventarioError("La existencia debe ser un entero mayor o igual a 0")
+        codigo = codigo.strip()
+        nombre = nombre.strip()
         if self._existe(codigo):
             raise InventarioError(f"Código duplicado: {codigo}")
 

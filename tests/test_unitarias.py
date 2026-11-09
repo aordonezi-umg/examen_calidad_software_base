@@ -138,3 +138,22 @@ def test_calcular_total_producto_inexistente(servicio):
     """Negativo: producto inexistente lanza ProductoNoEncontrado."""
     with pytest.raises(ProductoNoEncontrado):
         servicio.calcular_total("NO-EXISTE", 1)
+
+
+# ---------- S3: normalización de código y nombre ----------
+
+def test_codigo_y_nombre_se_guardan_sin_espacios(servicio):
+    """Los espacios al inicio o al final se eliminan antes de guardar."""
+    producto = servicio.agregar_producto("  P-05 ", "  Regla  ", Decimal("5.00"), 3)
+
+    assert producto.codigo == "P-05"
+    assert producto.nombre == "Regla"
+    assert servicio.consultar_existencia("P-05") == 3
+
+
+def test_codigo_con_espacios_cuenta_como_duplicado(servicio):
+    """'P-01 ' es el mismo código que 'P-01': debe rechazarse."""
+    with pytest.raises(InventarioError):
+        servicio.agregar_producto("P-01 ", "Otro", Decimal("1.00"), 1)
+
+    assert len(servicio.repositorio.listar()) == 1
