@@ -1,0 +1,11 @@
+# ACTIVIDAD S3. Este archivo es una PLANTILLA INCOMPLETA.
+# El estudiante debe implementar un workflow que:
+#   1) se active en push a la rama "desarrollo"
+#   2) descargue el repositorio (historial suficiente para análisis)
+#   3) prepare Python, instale dependencias y ejecute pytest
+#   4) genere coverage.xml mediante pytest-cov
+#   5) ejecute el análisis en SonarQube Cloud con secretos de GitHub
+#   6) muestre evidencias de la ejecución y del Quality Gate
+# IMPORTANTE: no escribir tokens en el YAML o en el repositorio.
+# Antes de configurar el escáner, revisar la documentación actual de
+# SonarQube Cloud y las instrucciones del evaluador.

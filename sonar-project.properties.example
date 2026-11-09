@@ -1,0 +1,9 @@
+# ACTIVIDAD S2 / S3: copiar este archivo a sonar-project.properties
+# y completar los valores según tu proyecto SonarQube Cloud.
+sonar.projectKey=REEMPLAZAR_CLAVE_DEL_PROYECTO
+sonar.organization=REEMPLAZAR_ORGANIZACION
+sonar.projectName=Examen-Calidad-Inventario
+sonar.sources=inventario
+sonar.tests=tests
+sonar.python.coverage.reportPaths=coverage.xml
+sonar.sourceEncoding=UTF-8
